@@ -1,5 +1,5 @@
 const mongoose=require('mongoose')
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect("mongodb+srv://Gokul:Gokul1234@cluster0.iqnujpm.mongodb.net/Book_Store?retryWrites=true&w=majority")
 .then(()=>{
 console.log('Connected to MongoDB Atlas');       
 })
