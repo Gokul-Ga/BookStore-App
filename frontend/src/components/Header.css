@@ -1,0 +1,23 @@
+
+.appBar {
+    background-color: #1976D2; /* Replace with your desired background color */
+  }
+  
+  .title {
+    flex-grow: 1;
+  }
+  
+  .navLink {
+    color: white;
+    text-decoration: none;
+    margin-right: 16px;
+  }
+  
+  .navLink:hover {
+    text-decoration: underline;
+  }
+  
+  .activeNavLink {
+    text-decoration: underline;
+  }
+  

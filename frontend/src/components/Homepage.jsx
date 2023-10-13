@@ -6,55 +6,16 @@ import {
   Button,
 } from '@mui/material';
 import Header from './Header';
-import BooksData from './Books';
 import image1 from '../components/assets/homepage.png';
+import image2 from '../components/assets/homepage2.png';
+import GetBooks from './books/GetBooks';
+import Footer from './Footer';
 
-import image2 from '../components/assets/image2.png';
-
-const BookItem = ({ book }) => (
-  <Box width="230px" padding={2} className="book-item">
-    <img
-      src={book.image}
-      alt={book.title}
-      width="50%"
-      height="200px"
-    />
-    <Typography variant="h6" component="div">
-      {book.title}
-    </Typography>
-    <Typography color="textSecondary">
-      Author: {book.author}
-    </Typography>
-    <Typography color="textSecondary">
-      Publication Year: {book.publicationYear}
-    </Typography>
-    <Typography color="textSecondary">
-      Genre: {book.genre}
-    </Typography>
-    <Typography color="textSecondary">
-      ISBN: {book.isbn}
-    </Typography>
-    <br />
-    <Button
-      variant="contained"
-      color="primary"
-      component={Link}
-      to={`/rent/${book.id}`}
-    >
-      Rent
-    </Button>
-  </Box>
-);
-
-const slideshowImages = [image1, image2,];
+const slideshowImages = [image1, image2];
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    setBooks(BooksData);
-  }, []);
 
   const changeSlideshowImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % slideshowImages.length);
@@ -70,19 +31,19 @@ const HomePage = () => {
   return (
     <>
       <Header />
-
+    
       <div className="homepage">
-        <section className="slideshow" style={{ marginTop: '4em' }}>
+        <section className="slideshow" style={{ marginTop: '-0.1em' }}>
           <img
             src={slideshowImages[currentImageIndex]}
             alt="Slideshow"
-            style={{ maxWidth: '100%', height: 'auto' }}
+            style={{ maxWidth: '100%', height: 'auto', marginLeft: '0px', marginRight: '0px' }}
           />
         </section>
 
         <section className="book-list">
           <Typography
-            variant="h3"
+            variant="h2"
             align="center"
             marginTop={10}
             padding={10}
@@ -94,29 +55,19 @@ const HomePage = () => {
               WebkitTextFillColor: "transparent",
             }}
           >
-            New Books
+            BOOKS
           </Typography>
-          <Box display="flex" width="100%" justifyContent="center" flexWrap="wrap">
-            {books.map((book) => (
-              <BookItem key={book.id} book={book} />
-            ))}
-          </Box>
         </section>
+<GetBooks/>
+        
       </div>
+      <Footer/>
     </>
+    
   );
 };
 
 export default HomePage;
-
-
-
-
-
-
-
-
-
 
 
 

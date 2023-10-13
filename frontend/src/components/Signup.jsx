@@ -39,21 +39,22 @@ const Signup = () => {
 
   return (
     <>
-      <Header />
-
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:'9em', marginBottom:'2.6em', }}>
+  <Header/>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '9em', marginBottom: '11%', }}>
         <Container maxWidth="lg"  >
-          <Paper elevation={3} style={{ padding: '10px' , borderRadius:'35px' }}>
-            <Typography mt={5} fontWeight={'bold'}  variant="h4" align="center" style={{ fontSize: 35,
-                             background: "-webkit-linear-gradient(45deg, #FE6B8B 30%, #FF8E53 50%)",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent", }}>
+          <Paper elevation={3} style={{ padding: '10px', borderRadius: '35px' }}>
+            <Typography mt={5} fontWeight={'bold'} variant="h4" align="center" style={{
+              fontSize: 35,
+              background: "-webkit-linear-gradient(45deg, #FE6B8B 30%, #FF8E53 50%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}>
               Welcome! Sign Up for Bookish Delights
             </Typography>
 
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6} md={6}>
-                <img src={img} alt="Image" style={{ width: '100%' }} />
+                <img src={img} alt="signup_image" style={{ width: '100%' }} />
               </Grid>
               <Grid item xs={12} sm={6} md={6} mt={10} pr={3}>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -122,8 +123,8 @@ const Signup = () => {
                     helperText={errors.password?.message}
                   />
                   <br /> <br />
-                    <a href="/login" style={{textDecoration:'none'}}>Have an account? Log in.</a>
-                    <br /> <br />
+                  <a href="/login" style={{ textDecoration: 'none' }}>Have an account? Log in.</a>
+                  <br /> <br />
                   <Button type="submit" variant="contained" sx={{ mt: 2, borderRadius: 10, bgcolor: '#2b2d48' }} fullWidth>
                     Signup
                   </Button>
@@ -138,24 +139,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
